@@ -1,0 +1,65 @@
+:root {
+  --primary-color: darkslateblue;
+  --primary-color-dark: rgb(45, 36, 107);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid cornflowerblue;
+  border-radius: 8px;
+}
+
+form input, form button {
+  border: solid 1px #ccc;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+form button:hover {
+  background: var(--primary-color-dark);
+}
