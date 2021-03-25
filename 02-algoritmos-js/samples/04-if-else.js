@@ -34,3 +34,4 @@ if (((number2 > 0 || number2 == 0) || (number2 < 5 || number2 == 5))) {
 }else {
   console.log('O valor não está condicionado a igualdade de 0 ou 5 e também não está entre esses valores');
 }
+
