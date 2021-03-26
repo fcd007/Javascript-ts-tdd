@@ -73,3 +73,15 @@ form button {
 form button:hover {
   background: var(--primary-color-dark);
 }
+
+.paragrafo-valid {
+  background: greenyellow;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.paragrafo-not-valid {
+  background: red;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
