@@ -26,6 +26,15 @@ body {
   border-radius: 8px;
 }
 
+.container h1 {
+  text-align: center;
+}
+.container h2 {
+  text-align: left;
+  font-size: 1em;
+  line-height: 1.1em;
+}
+
 form input, form button {
   border: solid 1px #ccc;
   display: block;
@@ -52,6 +61,7 @@ form input:focus {
 form button {
   background: var(--primary-color);
   border: none;
+  border-radius: 4px;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
