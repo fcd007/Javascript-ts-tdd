@@ -4,11 +4,20 @@
  * retorne true se a imagem estiver no modo paisagem
  */
 
-function ePaisagem(altura, largura) {
-  // altura = 150, largura = 350 = paisagem - tem largura maior que altura
-  if(altura > largura) return true;
-  if(largura > altura) return false;
-}
-const altura = 550;
-const largura = 350;
-console.log(`largura = ${altura} e largura = ${largura}, horizontal = ${ePaisagem(altura, largura)}`);
+// function ePaisagem(largura, altura) {
+//   // altura = 150, largura = 350 = paisagem - tem largura maior que altura
+//   return altura > largura;
+// }
+// const altura = 550;
+// const largura = 350;
+
+// console.log(
+//   `largura = ${altura} e largura = ${largura}, horizontal = ${ePaisagem(
+//     altura,
+//     largura
+//   )}`
+// );
+
+const ePaisagem = (largura, altura) => largura > altura;
+
+console.log(`Modo horizontal = ${ePaisagem(1980, 1920)}`);
