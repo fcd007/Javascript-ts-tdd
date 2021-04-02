@@ -62,3 +62,13 @@ document.addEventListener("click", function (event) {
     salvarTarefas();
   }
 });
+
+function addTarefasSalvas() {
+  const tarefas = localStorage.getItem('tarefas');
+  const tarefasSalvas = JSON.parse(tarefas);
+  for (const tarefa of tarefasSalvas) {
+    criaTarefa(tarefa);
+  }
+}
+
+addTarefasSalvas();
