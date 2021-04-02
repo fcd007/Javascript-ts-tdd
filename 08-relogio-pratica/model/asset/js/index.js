@@ -31,7 +31,7 @@ document.addEventListener('click', (event) => {
   } else if (element.classList.contains("zerar")) {
     clearInterval(timerPausa);
     relogio.innerHTML = "00:00:00";
-    relogio.classList.add("pausado");
+    relogio.classList.remove("pausado");
     segundosTempo = 0;
   }
 });
