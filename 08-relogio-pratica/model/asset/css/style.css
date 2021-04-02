@@ -60,5 +60,8 @@ form input:focus {
 
 .relogio {
   font-size: 3em;
-  
+}
+
+.pausado {
+  color: red;
 }
