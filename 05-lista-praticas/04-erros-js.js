@@ -16,5 +16,5 @@ try {
   console.log(soma(2, 4));
   console.log(soma(1, "o"));
 } catch (error) {
-  console.log(error);
+  // console.log(error);
 }
