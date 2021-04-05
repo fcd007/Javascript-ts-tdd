@@ -46,16 +46,17 @@ const numeros = [10, 20, 30, 40];
 arrayFuncao(numeros);
 
 // funcao para operar valores
-function contaValores(operador, acumulador, ...numeros) { //usar o rest operator , last param
+function contaValores(operador, acumulador, ...numeros) {
+  //usar o rest operator , last param
   // console.log(operador, acumulador, numeros);
   for (const numero of numeros) {
-    if (operador === '+') {
+    if (operador === "+") {
       acumulador += numero;
-    } else if(operador === '-') {
+    } else if (operador === "-") {
       acumulador -= numero;
-    } else if (operador === '*') {
+    } else if (operador === "*") {
       acumulador *= numero;
-    }else if (operador === '/') {
+    } else if (operador === "/") {
       acumulador /= numero;
     }
   }
@@ -66,3 +67,10 @@ contaValores("+", 0, 20, 30, 40, 50);
 contaValores("+", 0, 20, 30, 40, 50);
 contaValores("*", 1, 20, 30, 40, 50);
 contaValores("/", 1, 20, 30, 40, 50);
+
+//quando usamos arrow function não temos o arguments
+const conta = (operador, acumulador, ...numeros) => {
+  console.log(operador, acumulador, numeros);
+};
+//fazendo chamada e verificação de parâmentros da função
+conta("+", 10, 20, 30, 40, 50);
