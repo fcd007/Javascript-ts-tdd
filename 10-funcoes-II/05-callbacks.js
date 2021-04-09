@@ -1,6 +1,6 @@
 function rand(min = 1000, max = 3000) {
   const num = Math.random() * (max - min) + min;
-  return num;
+  return Math.floor(num);
 }
 
 function function1(callback) {
