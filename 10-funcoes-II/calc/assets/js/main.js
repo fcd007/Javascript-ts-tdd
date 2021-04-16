@@ -1,28 +1,52 @@
-function criaCalculadora() {
+//criando uma factory function
+function criaCalculadora(params) {
   return {
-    display: document.querySelector('.display'),
+    display: document.querySelector(".display"),
 
     inicia() {
-      this.cliqueBotoes();
-      this.pressionaBackSpace();
+      this.clickButtoes();
       this.pressionaEnter();
     },
 
-    pressionaBackSpace() {
-      this.display.addEventListener('keydown', e => {
-        if (e.keyCode === 8) {
-          e.preventDefault();
-          this.clearDisplay();
+    pressionaEnter() {
+      this.display.addEventListener("keyup", (event) => {
+        if (event.keyCode === 13) {
+          this.realizaConta();
         }
       });
     },
 
-    pressionaEnter() {
-      this.display.addEventListener('keyup', e => {
-        if (e.keyCode === 13) {
+    clickButtoes() {
+      document.addEventListener("click", (event) => {
+        const element = event.target;
+        if (element.classList.contains("btn-num")) {
+          this.btnParaDisplay(element.innerText);
+        }
+
+        if (element.classList.contains("btn-clear")) {
+          this.clearDisplay();
+        }
+
+        if (element.classList.contains("btn-del")) {
+          this.apagaUmElemento();
+        }
+
+        if (element.classList.contains("btn-eq")) {
           this.realizaConta();
         }
-      });
+      }); //use o this clickButtoes()
+    },
+
+    btnParaDisplay(valor) {
+      this.display.value += valor;
+    },
+
+    clearDisplay() {
+      this.display.value = "";
+    },
+
+    apagaUmElemento() {
+      this.display.value = this.display.value.slice(0, -1); //removendo apenas o último elemento
     },
 
     realizaConta() {
@@ -31,55 +55,19 @@ function criaCalculadora() {
       try {
         conta = eval(conta);
 
-        if(!conta) {
-          alert('Conta inválida');
+        if (!conta && conta !== 0) {
+          alert("Conta inválida");
+          console.log(conta, 'try');
           return;
         }
 
-        this.display.value = String(conta);
-      } catch(e) {
-        alert('Conta inválida');
+        this.display.value = conta;
+      } catch (error) {
+        alert("Conta inválida");
+        console.log(conta, 'catch');
         return;
       }
     },
-
-    clearDisplay() {
-      this.display.value = '';
-    },
-
-    apagaUm() {
-      this.display.value = this.display.value.slice(0, -1);
-    },
-
-
-    cliqueBotoes() {
-      document.addEventListener('click', e => {
-        const el = e.target;
-
-        if(el.classList.contains('btn-num')) {
-          this.btnParaDisplay(el.innerText);
-        }
-
-        if(el.classList.contains('btn-clear')) {
-          this.clearDisplay();
-        }
-
-        if(el.classList.contains('btn-del')) {
-          this.apagaUm();
-        }
-
-        if(el.classList.contains('btn-eq')) {
-          this.realizaConta();
-        }
-
-        this.display.focus();
-      });
-    },
-
-    btnParaDisplay(valor) {
-      this.display.value += valor;
-    }
-
   };
 }
 
