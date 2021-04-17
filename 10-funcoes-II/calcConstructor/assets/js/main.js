@@ -8,7 +8,7 @@ function Calculadora() {
 
   this.capturaEnter = () => {
     const keyCodeEnter = 13; //código da tecla enter
-    this.display.addEventListener("keyup", (event) => {
+    document.addEventListener("keyup", (event) => {
       if (event.keyCode === keyCodeEnter) {
         this.resultadoConta();
       }
@@ -51,7 +51,6 @@ function Calculadora() {
     }
   };
 }
-
 //use molde e crie um objeto Calculadora
 const calculadora = new Calculadora();
 calculadora.inicia();
