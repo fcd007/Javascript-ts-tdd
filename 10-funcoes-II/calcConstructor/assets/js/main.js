@@ -14,11 +14,27 @@ function Calculadora() {
   this.addNumero = (elemento) => (this.display.value += elemento.innerText);
   this.clear = () => (this.display.value = "");
   this.deletar = () => (this.display.value = this.display.value.slice(0, -1));
-  this.resultadoConta = (elemento) => (eval(this.display.value));
+  this.resultadoConta = () => {
+    let conta = this.display.value;
 
-  this.inicia = () => {
-    this.capturaCliques();
+    try {
+      conta = eval(conta);
+
+      if (!conta && conta !== 0) {
+        alert("Conta inválida");
+        console.log(conta, "try");
+        return;
+      }
+
+      this.display.value = conta;
+    } catch (error) {
+      alert("Conta inválida");
+      console.log(conta, "catch");
+      return;
+    }
   };
+
+  this.inicia = () => this.capturaCliques();
 }
 
 //use molde e crie um objeto Calculadora
