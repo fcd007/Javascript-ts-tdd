@@ -1,6 +1,20 @@
 function Calculadora() {
   this.display = document.querySelector(".display");
 
+  this.inicia = () => {
+    this.capturaCliques();
+    this.capturaEnter();
+  };
+
+  this.capturaEnter = () => {
+    const keyCodeEnter = 13; //código da tecla enter
+    this.display.addEventListener("keyup", (event) => {
+      if (event.keyCode === keyCodeEnter) {
+        this.resultadoConta();
+      }
+    });
+  };
+
   this.capturaCliques = () => {
     document.addEventListener("click", (evento) => {
       const elemento = evento.target;
@@ -11,7 +25,10 @@ function Calculadora() {
     });
   };
 
-  this.addNumero = (elemento) => (this.display.value += elemento.innerText);
+  this.addNumero = (elemento) => {
+    this.display.value += elemento.innerText;
+    this.display.focus();
+  };
   this.clear = () => (this.display.value = "");
   this.deletar = () => (this.display.value = this.display.value.slice(0, -1));
   this.resultadoConta = () => {
@@ -33,8 +50,6 @@ function Calculadora() {
       return;
     }
   };
-
-  this.inicia = () => this.capturaCliques();
 }
 
 //use molde e crie um objeto Calculadora

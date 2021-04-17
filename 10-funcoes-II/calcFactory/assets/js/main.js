@@ -9,8 +9,10 @@ function criaCalculadora(params) {
     },
 
     pressionaEnter() {
+      const keyCodeEnter = 13; //código da tecla enter
+
       this.display.addEventListener("keyup", (event) => {
-        if (event.keyCode === 13) {
+        if (event.keyCode === keyCodeEnter) {
           this.realizaConta();
         }
       });
