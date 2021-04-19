@@ -30,17 +30,20 @@ const nomes = [
 //retorne as pessoas que tem o nome com 5 letras ou mais
 const nomesLetrasMaior5 = nomes.filter((nomes) => {
   return nomes.nome.length >= 5;
-})
+});
 console.log(nomesLetrasMaior5);
 
 // retorne as pessoas com mais de 50 anos
 const idadeMaiores50 = nomes.filter((nomes) => {
   return nomes.idade > 50;
-})
+});
 console.log(idadeMaiores50);
 
 //retorne as pessoas cujo nome termina com a letra "a"
+// const nomeTerminaLetraA = nomes.filter((nomes) => {
+//   return nomes.nome[nomes.nome.length - 1] === "a";
+// });
 const nomeTerminaLetraA = nomes.filter((nomes) => {
-  return nomes.nome[nomes.nome.length-1] === "a";
-})
+  return nomes.nome.toLocaleLowerCase().endsWith("a");
+});
 console.log(nomeTerminaLetraA);
