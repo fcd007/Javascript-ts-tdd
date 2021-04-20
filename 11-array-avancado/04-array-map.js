@@ -4,8 +4,9 @@
 // const numerosDobro = numeros.map((valor) => {
 //   return valor * 2;
 // });
+// console.log(numerosDobro);
 
-const nomes = [
+const pessoas = [
   { nome: "Dantas", idade: 31 },
   { nome: "Luiz", idade: 19 },
   { nome: "Diana", idade: 22 },
@@ -13,8 +14,36 @@ const nomes = [
   { nome: "Lucas", idade: 51 },
   { nome: "Maria", idade: 53 },
 ];
-// console.log(numerosDobro);
-//para cada elemento
-//retorne apenas uma string com o nome da pessoa
-//remova apenas a chave "nome" do objeto
-//adicione uma chave id em casa objeto
+// //para cada elemento
+// //retorne apenas uma string com o nome da pessoa
+// const nomes = pessoas.map(({ nome })=> {
+//   return nome;
+// });
+
+// console.log(nomes);
+// //remova apenas a chave "nome" do objeto
+const idades = pessoas.map(({ idade }) => {
+  return { idade: idade };
+});
+console.log(idades);
+// const removeNomes = pessoas.map(({ idade }) => {
+//   return idade;
+// });
+// console.log(removeNomes);
+// //adicione uma chave id em casa objeto
+// const idPessoas = pessoas.map(({ nome, idade }, indice) => {
+//   return { id: indice, nome: nome, idade: idade };
+// });
+const idPesoas = pessoas.map((obj, indice)=> {
+  const arrayID = {...obj};
+  arrayID.id = indice;
+  return arrayID;
+});
+
+console.log(idPesoas);
+console.log(pessoas);
+// const idPessoas = pessoas.map(({nome, idade}, indice)=> {
+//   return `id:${indice} nome:${nome} idade: ${idade}`
+// });
+
+// console.log(idPessoas);
