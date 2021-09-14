@@ -1,0 +1,38 @@
+<script>
+    const MILISSEGUNDOS = 1000;
+    const SEGUNDOS = 60;
+    const MINUTOS = 60; 
+    const UM_DIA = 24;
+    const UM_DIA_MILS = (UM_DIA*MINUTOS*SEGUNDOS*MILISSEGUNDOS);
+
+    let dataAtual = new Date(); // data atual do usuário
+    let dataEnvioDoPedido = new Date(); //data base para calcular o prazo
+    let diasPrazoFinal = new Date(); // dias para adicionar a data atual - contagem prazo
+    diasPrazoFinal.setDate(dataEnvioDoPedido.getDate() + 1); //adicionar o prazo em dias
+    let diferencaEntreDatas = diasPrazoFinal.getTime() - dataEnvioDoPedido.getTime();
+    console.log(diferencaEntreDatas);
+
+    window.onload = function () {
+        if(diferencaEntreDatas > 0) {
+            tempoRestante = Math.ceil(diferencaEntreDatas);
+            document.forms[0].elements[0].value = 'Faltam ' + tempoRestante + ' para aprovação automática!';
+        }else if(diferencaEntreDatas <= 0 && diferencaEntreDatas > -1) {
+            document.forms[0].elements[0].value = "Data do prazo chegou!";
+        }
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagen Regressiva</title>
+</head>
+<body>
+    <form action="" method="get">
+        <input type="text" size="40" />
+    </form>
+</body>
+</html>
