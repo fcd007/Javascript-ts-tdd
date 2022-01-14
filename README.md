@@ -4,7 +4,7 @@
 
 ## Descrição
 
-* O Projeto apresenta estruturas básicas do Javascrip/Typescript utilizar exemplos de códigos utilizando typagem estática com o Typescript, utilizando boas práticas e código limpo.
+* O Projeto apresenta estruturas básicas do Javascrip/Typescript.
 
 ## Sumário
 
