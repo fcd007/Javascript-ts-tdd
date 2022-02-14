@@ -1,0 +1,23 @@
+{
+  "name": "javascript-ts-tdd",
+  "version": "1.0.0",
+  "description": "* O Projeto apresenta estruturas básicas do Javascrip/Typescript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcd007/Javascript-ts-tdd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcd007/Javascript-ts-tdd/issues"
+  },
+  "homepage": "https://github.com/fcd007/Javascript-ts-tdd#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.0.7"
+  }
+}
