@@ -1,6 +1,6 @@
 # Javascript-ts-tdd
 
-# JavaScript e TypeScript do básico ao avançado 2021
+# JavaScript e TypeScript do básico ao avançado
 
 ## Descrição
 
